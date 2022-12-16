@@ -1,6 +1,6 @@
 /*
 Create Database StudentFunds
-GO 
+GO
 USE StudentFunds
 GO
 */
@@ -14,7 +14,7 @@ CREATE TABLE Recipient(
 		CONSTRAINT [pk_RecipientID] PRIMARY KEY CLUSTERED
 			(RecipientID ASC)
 ) ON [PRIMARY]
-declare @counter int = 1 
+declare @counter int = 1
 declare @max int = 25 --set number of repetitions here
 declare @a varchar(50)
 declare @b varchar(50)
@@ -22,29 +22,29 @@ declare @b varchar(50)
 while @counter <= @max
 begin
 
-SET @a = (SELECT TOP 1 FirstName 
-    FROM (SELECT 'Allison' AS FirstName 
+SET @a = (SELECT TOP 1 FirstName
+    FROM (SELECT 'Allison' AS FirstName
     UNION SELECT 'Christina' AS FirstName
     UNION SELECT 'Matt' AS FirstName
 	UNION SELECT 'Nathan' AS FirstName
 	UNION SELECT 'Steve' AS FirstName
     UNION SELECT 'Carol' AS FirstName
-	UNION SELECT 'Cynthia' AS FirstName 
+	UNION SELECT 'Cynthia' AS FirstName
 	UNION SELECT 'Terry' AS FirstName
     UNION SELECT 'Gerrit' AS FirstName
-	UNION SELECT 'Lisa' AS FirstName 
+	UNION SELECT 'Lisa' AS FirstName
     UNION SELECT 'Maggie' AS FirstName) AS First_Names ORDER BY NEWID())
 
 SET @b =
-    (SELECT TOP 1 LastName 
-    FROM (SELECT 'Johnson' AS LastName 
-    UNION SELECT 'Hudson' AS LastName 
+    (SELECT TOP 1 LastName
+    FROM (SELECT 'Johnson' AS LastName
+    UNION SELECT 'Hudson' AS LastName
     UNION SELECT 'Jackson' AS LastName
     UNION SELECT 'Gonzalez' AS LastName
-	UNION SELECT 'Alexander' AS LastName 
+	UNION SELECT 'Alexander' AS LastName
     UNION SELECT 'Barrs' AS LastName
     UNION SELECT 'Franklin' AS LastName
-	UNION SELECT 'Gallagher' AS LastName 
+	UNION SELECT 'Gallagher' AS LastName
     UNION SELECT 'Peterson' AS LastName
     UNION SELECT 'Cortez' AS LastName
 	UNION SELECT 'McGee' AS LastName) AS Last_Names ORDER BY NEWID())
